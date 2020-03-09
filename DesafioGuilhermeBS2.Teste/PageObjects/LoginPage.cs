@@ -44,6 +44,11 @@ namespace DesafioGuilhermeBS2.Teste.PageObjects
             }
         }
 
+        public void verificarTitulo(string titulo)
+        {
+            Assert.AreEqual(driver.Title, "My View - MantisBT");
+        }
+
         public void Sair()
         {
             driver.Quit();

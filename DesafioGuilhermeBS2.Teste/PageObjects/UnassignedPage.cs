@@ -5,8 +5,7 @@ using System;
 
 namespace DesafioGuilhermeBS2.Teste.PageObjects
 {
-  
-    class UnassignedPage
+     class UnassignedPage
     {
         private MetodosComuns mc;
         private IWebDriver driver;
@@ -18,10 +17,10 @@ namespace DesafioGuilhermeBS2.Teste.PageObjects
         public void ValidaDirecionamentoTela(string assertNumeroProjeto)
         {
             mc = new MetodosComuns(driver);
-
             mc.Valida(assertNumeroProjeto);
-
         }
+
+        [Obsolete]
         public void PreencherFormulario(string adiconarTag)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(180));
@@ -31,7 +30,6 @@ namespace DesafioGuilhermeBS2.Teste.PageObjects
 
             AdiconarTag.SendKeys(adiconarTag);
             addTag.Click();
-
         }
 
         public void anexarArquivo()
@@ -42,6 +40,7 @@ namespace DesafioGuilhermeBS2.Teste.PageObjects
             UploadArquivo.SendKeys(filePath);
         }
 
+        [Obsolete]
         public void adicionarNota(string adicionarNotaDoProblema)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(180));
@@ -51,6 +50,5 @@ namespace DesafioGuilhermeBS2.Teste.PageObjects
             InformarDadosParaNota.SendKeys(adicionarNotaDoProblema);
             AdicionarNota.Click();
         }
-
     }
 }

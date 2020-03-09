@@ -1,7 +1,5 @@
-﻿using DesafioGuilhermeBS2.Teste.Base;
-using DesafioGuilhermeBS2.Teste.PageObjects;
+﻿using DesafioGuilhermeBS2.Teste.PageObjects;
 using DesafioGuilhermeBS2.Teste.Utils;
-using DesafioGuilhermeBS2.Teste.Utils.screenshot;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -15,13 +13,13 @@ namespace DesafioGuilhermeBS2.Teste.Teste
         private IWebDriver wd;
         private LoginPage log;
         private MetodosComuns mc;
-        private screenshot evidenciaTeste;
+        private TestEvidence evidenciaTeste;
 
         [TestCase(Navegadores.GoogleChrome, "guilherme.bento","123456", "acessoSenhaIncorreta")]
-        [TestCase(Navegadores.GoogleChrome, "joao.silva","Bm19283746","acessoNomeInocorreto")]
-        [TestCase(Navegadores.GoogleChrome, "margherita","","acessoNaoInoformarSenha")]
+        [TestCase(Navegadores.Firefox, "joao.silva","Bm19283746","acessoNomeInocorreto")]
+        [TestCase(Navegadores.GoogleChrome, "margherita","","acessoNaoInoformandoSenha")]
         [Obsolete]
-        public void AcessoNegado(int navegador, string login = null, string password = null, string nomeEvidencia = null)
+        public void AcessoNegado(int navegador, string login = null, string password = null, string screenShotName = null)
         {
             
             try
@@ -40,13 +38,13 @@ namespace DesafioGuilhermeBS2.Teste.Teste
 
                 log = new LoginPage(wd);
                 mc = new MetodosComuns(wd);
-                evidenciaTeste = new screenshot(wd);
+                evidenciaTeste = new TestEvidence(wd);
 
                 log.GoTo();
                 log.Logar(login, password);
 
                 mc.Valida("Your account may be disabled or blocked or the username/password you entered is incorrect.");
-                evidenciaTeste.Print(nomeEvidencia);
+                evidenciaTeste.Capture(screenShotName);
                 mc.Fechar();
             }
             catch (Exception)
@@ -79,13 +77,14 @@ namespace DesafioGuilhermeBS2.Teste.Teste
 
                 log = new LoginPage(wd);
                 mc = new MetodosComuns(wd);
-                evidenciaTeste = new screenshot(wd);
+                evidenciaTeste = new TestEvidence(wd);
 
                 log.GoTo();
                 log.Logar(login, password);
 
                 log.verificaURL("https://mantis-prova.base2.com.br/my_view_page.php");
-                evidenciaTeste.Print(nomeEvidencia);
+                log.verificarTitulo("My View - MantisBT");
+                evidenciaTeste.Capture(nomeEvidencia);
                 mc.Fechar();
                 
             }

@@ -1,6 +1,5 @@
 ﻿using DesafioGuilhermeBS2.Teste.PageObjects;
 using DesafioGuilhermeBS2.Teste.Utils;
-using DesafioGuilhermeBS2.Teste.Utils.screenshot;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -16,12 +15,12 @@ namespace DesafioGuilhermeBS2.Teste.Teste
         private MetodosComuns mc;
         private HomePage paginaInicial;
         private UnassignedPage detalhesProjeto;
-        private screenshot evidenciaTeste;
+        private TestEvidence evidenciaTeste;
 
-        [TestCase(Navegadores.GoogleChrome, "guilherme.bento", "Bm19283746", "3648", "testeBase2", "desafio de teste base2", "desafio de teste base2")]
-        [TestCase(Navegadores.GoogleChrome, "guilherme.bento", "Bm19283746", "3647", "Teste", "desafio de teste base2 realizado no dia 06/03", "evidencia desafio 0603")]
+        [TestCase(Navegadores.GoogleChrome, "guilherme.bento", "Bm19283746", "3658", "testeBase2", "desafio de teste base2", "desafio de teste base2")]
+        [TestCase(Navegadores.GoogleChrome, "guilherme.bento", "Bm19283746", "3657", "Teste", "desafio de teste base2 realizado no dia 06/03", "evidencia desafio 0603")]
         [Obsolete]
-        public void AtribuirProjetoBs2(int navegador, string login, string password, string NumeroNaoAtribuido, string adiconarTag, string adicionarNotaDoProblema, string nomeEvidencia)
+        public void AtribuirProjetoBs2(int navegador, string login, string password, string NumeroNaoAtribuido, string adiconarTag, string adicionarNotaDoProblema, string screenShotName)
         {
             try
             {
@@ -41,7 +40,7 @@ namespace DesafioGuilhermeBS2.Teste.Teste
                 mc = new MetodosComuns(wd);
                 paginaInicial = new HomePage(wd);
                 detalhesProjeto = new UnassignedPage(wd);
-                evidenciaTeste = new screenshot(wd);
+                evidenciaTeste = new TestEvidence(wd);
 
                 log.GoTo();
                 log.Logar(login, password);
@@ -50,7 +49,7 @@ namespace DesafioGuilhermeBS2.Teste.Teste
                 detalhesProjeto.PreencherFormulario(adiconarTag);
                 detalhesProjeto.anexarArquivo();
                 detalhesProjeto.adicionarNota(adicionarNotaDoProblema);
-                evidenciaTeste.Print(nomeEvidencia);
+                evidenciaTeste.Capture(screenShotName);
 
 
                 mc.Fechar();
