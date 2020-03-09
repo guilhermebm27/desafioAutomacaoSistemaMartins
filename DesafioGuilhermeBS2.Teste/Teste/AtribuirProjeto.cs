@@ -17,8 +17,8 @@ namespace DesafioGuilhermeBS2.Teste.Teste
         private UnassignedPage detalhesProjeto;
         private TestEvidence evidenciaTeste;
 
-        [TestCase(Navegadores.GoogleChrome, "guilherme.bento", "Bm19283746", "3658", "testeBase2", "desafio de teste base2", "desafio de teste base2")]
-        [TestCase(Navegadores.GoogleChrome, "guilherme.bento", "Bm19283746", "3657", "Teste", "desafio de teste base2 realizado no dia 06/03", "evidencia desafio 0603")]
+        [TestCase(Navegadores.GoogleChrome, "guilherme.bento", "Bm19283746", "3658", "testeBase2", "desafio de teste base2", "desafioDeTesteBase2")]
+        [TestCase(Navegadores.GoogleChrome, "guilherme.bento", "Bm19283746", "3657", "Teste", "desafio de teste base2 realizado no dia 06/03", "evidenciaDesafio0603")]
         [Obsolete]
         public void AtribuirProjetoBs2(int navegador, string login, string password, string NumeroNaoAtribuido, string adiconarTag, string adicionarNotaDoProblema, string screenShotName)
         {

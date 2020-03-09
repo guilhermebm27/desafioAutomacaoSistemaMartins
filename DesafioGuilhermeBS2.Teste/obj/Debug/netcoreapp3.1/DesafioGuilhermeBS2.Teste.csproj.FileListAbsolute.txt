@@ -113,3 +113,4 @@ C:\QA\Selenium\DesafioGuilhermeBS2.Teste\DesafioGuilhermeBS2.Teste\bin\Debug\net
 C:\QA\Selenium\DesafioGuilhermeBS2.Teste\DesafioGuilhermeBS2.Teste\bin\Debug\netcoreapp3.1\HtmlAgilityPack.dll
 C:\QA\Selenium\DesafioGuilhermeBS2.Teste\DesafioGuilhermeBS2.Teste\bin\Debug\netcoreapp3.1\RazorEngine.dll
 C:\QA\Selenium\DesafioGuilhermeBS2.Teste\DesafioGuilhermeBS2.Teste\bin\Debug\netcoreapp3.1\System.Web.Razor.dll
+C:\QA\Selenium\DesafioGuilhermeBS2.Teste\DesafioGuilhermeBS2.Teste\obj\Debug\netcoreapp3.1\DesafioGuilhermeBS2.Teste.csprojAssemblyReference.cache
