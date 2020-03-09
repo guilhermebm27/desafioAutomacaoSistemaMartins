@@ -57,7 +57,7 @@ namespace DesafioGuilhermeBS2.Teste.Teste
 
         [TestCase(Navegadores.Firefox, "guilherme.bento", "Bm19283746", "autenticadoComSucesso")]
         [Obsolete]
-        public void UsuarioAutenticado(int navegador, string login = null, string password = null, string nomeEvidencia = null)
+        public void UsuarioAutenticado(int navegador, string login = null, string password = null, string screenShotName = null)
         {
 
             try
@@ -84,7 +84,7 @@ namespace DesafioGuilhermeBS2.Teste.Teste
 
                 log.verificaURL("https://mantis-prova.base2.com.br/my_view_page.php");
                 log.verificarTitulo("My View - MantisBT");
-                evidenciaTeste.Capture(nomeEvidencia);
+                evidenciaTeste.Capture(screenShotName);
                 mc.Fechar();
                 
             }
